@@ -16,7 +16,7 @@ header{
 }
 
 main{
-    margin: auto 12rem;
+    margin: auto 2rem;
 }
 
 h1{
@@ -24,21 +24,20 @@ h1{
 }
 
 .project-c{
-    display: grid;
-    grid-template-columns: auto  ;
+    display: flex;
+    flex-wrap: wrap;
     grid-gap: 1rem;
+    justify-content: center;
 }
 
 .box{
-    width: 100%;
-    height: 200px;
     border: 1px solid black;
 }
 
 .counter-c{
-    width: 100%;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
+    height: fit-content;
 }
 
 .counter-display{
@@ -61,6 +60,7 @@ button{
 .move-icon-c{
     justify-content: center;
     display: flex;
+    gap: 1rem;
 }
 
 .move-icon {
@@ -96,6 +96,7 @@ button{
     text-align: center;
     padding: 1rem;
     border: 1px solid black;
+    height: fit-content;
 }
 
 .jokes-btn{
@@ -112,8 +113,98 @@ button{
 
 }
 
-@media only screen and (max-width: 600px) {
+/* weather app */
+.weather-c{
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.weather-search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.weather-search input{
+    border: 0;
+    outline: 0;
+    background-color: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 15px 0 0 15px;
+    flex: 1;
+    font-size: 18px;
+}
+
+.weather-search button{
+    border: 0;
+    outline: 0;
+    background-color: #ebfffc;
+    border-radius: 0 15px 15px 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.weather-search button img{
+    width: 16px;
+}
+
+.weather-icon{
+    width: 170px;
+}
+
+.weather h2{
+    font-size: 60px;
+    font-weight: 500;
+}
+.weather h3{
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -20px;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 25px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind{
+    font-size: 28px ;
+    margin-top: -10px;
+}
+
+@media only screen and (max-width: 768px) {
     main {
         margin: 0 1rem;
+        
+
+    }
+    .project-c{
+        display: block;
+        
+    
+    }
+    .box{
+        margin-bottom: 1rem;
+        overflow: hidden;
     }
 }
