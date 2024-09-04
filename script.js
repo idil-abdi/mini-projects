@@ -125,7 +125,7 @@ updateScoreElement();
 const jokesContainer = document.getElementById('jokes')
 const btn = document.querySelector('.jokes-btn');
 
-//const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
+const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
 const options = {
 	method: 'GET',
 	headers: {
@@ -146,3 +146,40 @@ let jokes = async () => {
 
 btn.addEventListener('click', jokes);
 jokes();
+
+// weather app
+const apiKey = '7b6a6f9b787cac1ee11807f1b7294359'
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
+
+const weatherSearchBox = document.querySelector('.weather-search input')
+const weatherSearchBtn = document.querySelector('.weather-search button')
+const weatherIcon = document.querySelector('.weather-icon')
+
+
+async function checkWeather(city) {
+  const response = await fetch(apiUrl + city +`&appid=${apiKey}`) ;
+  let data = await response.json();
+  console.log(data);
+  
+  document.querySelector('.city').innerHTML = data.name;
+  document.querySelector('.temp').innerHTML = Math.round(data.main.temp)  +'°C';
+  document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
+  document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
+
+  if(data.weather[0].main == 'Clouds'){
+    weatherIcon.src = './img/clouds.png'
+  } else if (data.weather[0].main == 'Clear'){
+    weatherIcon.src = './img/clear.png'
+  } else if (data.weather[0].main == 'Rain'){
+    weatherIcon.src = './img/rain.png'
+  } else if (data.weather[0].main == 'Drizzle'){
+    weatherIcon.src = './img/drizzle.png'
+  } else if (data.weather[0].main == 'Mist'){
+    weatherIcon.src = './img/mist.png'
+  }
+}
+
+weatherSearchBtn.addEventListener('click', function() {
+  checkWeather(weatherSearchBox.value); 
+})
+//29.40
