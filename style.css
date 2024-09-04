@@ -60,8 +60,8 @@ button{
 }
 
 .move-icon-c{
+    justify-content: center;
     display: flex;
-    justify-content: space-evenly;
 }
 
 .move-icon {
@@ -87,3 +87,10 @@ button{
     justify-content: space-around;
     margin: 0.5rem 0;
 }
+
+@media only screen and (max-width: 600px) {
+    .project-c{
+        grid-template-columns: auto ;
+
+    }
+  }

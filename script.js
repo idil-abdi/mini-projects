@@ -59,7 +59,7 @@ updateScoreElement();
       if (computerMove === "rock") {
         result = "You lose.";
       } else if (computerMove === "paper") {
-        result = "you win.";
+        result = "You Win.";
       } else if (computerMove === "scissors") {
         result = "Tie.";
       }
@@ -122,3 +122,4 @@ updateScoreElement();
 
     return computerMove;
   }
+  
