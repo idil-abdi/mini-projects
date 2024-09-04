@@ -21,10 +21,8 @@ decreaseEl.addEventListener('click', () => {
     update()
 })
 
+
 //rock paper scissors
-
-
-
 let score = JSON.parse(localStorage.getItem("score")) || {
     wins: 0,
     loses: 0,
@@ -57,33 +55,33 @@ updateScoreElement();
 
     if (playerMove === "scissors") {
       if (computerMove === "rock") {
-        result = "You lose.";
+        result = "Lose.";
       } else if (computerMove === "paper") {
-        result = "You Win.";
+        result = "Win.";
       } else if (computerMove === "scissors") {
         result = "Tie.";
       }
     } else if (playerMove === "paper") {
       if (computerMove === "rock") {
-        result = "You win.";
+        result = "Win.";
       } else if (computerMove === "paper") {
         result = "Tie.";
       } else if (computerMove === "scissors") {
-        result = "You lose.";
+        result = "Lose.";
       }
     } else if (playerMove === "rock") {
       if (computerMove === "rock") {
         result = "Tie.";
       } else if (computerMove === "paper") {
-        result = "You lose.";
+        result = "Lose.";
       } else if (computerMove === "scissors") {
-        result = "You win.";
+        result = "Win.";
       }
     }
 
-    if (result === "You win.") {
+    if (result === "Win.") {
       score.wins += 1;
-    } else if (result === "You lose.") {
+    } else if (result === "Lose.") {
       score.loses += 1;
     } else if (result === "Tie.") {
       score.tie += 1;
@@ -123,3 +121,28 @@ updateScoreElement();
     return computerMove;
   }
   
+// jokes
+const jokesContainer = document.getElementById('jokes')
+const btn = document.querySelector('.jokes-btn');
+
+//const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '8ecef55232mshfd797077303d2b8p1ea2b2jsn77d2ba0e86e5',
+		'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+let jokes = async () => {
+    try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    jokesContainer.textContent = `${result[0].joke}`;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+btn.addEventListener('click', jokes);
+jokes();

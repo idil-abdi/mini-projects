@@ -21,16 +21,12 @@ h1{
 
 .project-c{
     display: grid;
-    grid-template-columns: auto auto auto ;
-    grid-gap: 1rem
+    grid-template-columns: auto  ;
+    grid-gap: 1rem;
+    margin: auto 12rem;
 }
 
 .box{
-    width: 100%;
-    height: 200px;
-    border: 1px solid black;
-}
-.box-1 {
     width: 100%;
     height: 200px;
     border: 1px solid black;
@@ -78,19 +74,43 @@ button{
 
 .btn-c{
     display: flex;
-    justify-content: end;
+    justify-content: center;
     gap: 0.5rem;
 }
 
-.alignItem{
+.alignItem{    
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0.5rem 0;
+    gap: 4rem;
+}
+
+.jokes-generator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.jokes-btn{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.jokes-btn:hover{
+    background-color: lightgray;
+
 }
 
 @media only screen and (max-width: 600px) {
-    .project-c{
-        grid-template-columns: auto ;
-
+    .project-c {
+        margin: 0;
     }
-  }
+}
