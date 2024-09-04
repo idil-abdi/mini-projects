@@ -15,42 +15,75 @@ header{
     text-align: center;
 }
 
-h1,h2{
-    font-family: 'Montserrat';
-}
-
-h2, p{
-    margin-bottom: 10px;
+h1{
+    text-align: center;
 }
 
 .project-c{
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-gap: 1rem
 }
 
-.card{
-    width: 32%;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-img{
+.box{
     width: 100%;
-    border-radius: 10px 10px 0  0  ;
+    height: 200px;
+    border: 1px solid black;
+}
+.box-1 {
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
 }
 
-.context{
-    margin: 10px;
+.counter-c{
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
 }
 
-.btn-box{
+.counter-display{
+    border: 1px solid black;
+    margin: 5px auto;
+    width: 160px;
+    font-size: 35px;
+}
+
+button{
+    padding: 0.5rem 1rem;
+}
+
+.rock-paper-scissors-c{
+    color: black;
+    padding: 1rem;
+    height: fit-content;
+}
+
+.move-icon-c{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.move-icon {
+    height: 50px;
+}
+.move-button {
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.result, .score {
+    font-weight: bold;
+}
+
+.btn-c{
     display: flex;
     justify-content: end;
-    
+    gap: 0.5rem;
 }
 
-.btn-box button{
-    padding: 5px 25px;
-    border-radius: 10px;
+.alignItem{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem 0;
 }

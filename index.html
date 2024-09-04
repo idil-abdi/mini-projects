@@ -10,38 +10,61 @@
     <header><h1>Mini Projects</h1></header>
     <main>
       <div class="project-c">
-        <div class="card">
-          <div class="img-box">
-            <img src="./img/jokes-img.png" alt="jokes-img" />
+        <div class="box counter-c">
+          <h1>Counter:</h1>
+          <div class="counter-display"></div>
+          <button class="increase">+</button>
+          <button class="reset">Reset</button>
+          <button class="decrease">-</button>
+        </div>
+
+        <div class="box rock-paper-scissors-c">
+          <h1>Rock Paper Scissors:</h1>
+          <div class="move-icon-c">
+            <button onclick="playGame('rock');" class="move-button">
+              <img src="/img/rock-emoji.png" alt="rock" class="move-icon" />
+            </button>
+            <button onclick="playGame('paper');" class="move-button">
+              <img src="/img/paper-emoji.png" alt="paper" class="move-icon" />
+            </button>
+            <button onclick="playGame('scissors');" class="move-button">
+              <img
+                src="/img/scissors-emoji.png"
+                alt="scissors"
+                class="move-icon"
+              />
+            </button>
           </div>
-          <div class="context">
-            <h2>Random Jokes</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-              dolorem animi dicta voluptatibus, officia aspernatur facere
-              accusamus sapiente, corporis vel quas maiores similique in illum
-              eum neque omnis? Ea, sint?
-            </p>
-            <div class="btn-box"><button>Demo</button></div>
+
+          <div class="alignItem">
+            <p class="js-result result"></p>
+            <p class="js-score score"></p>
+          </div>
+          <p class="js-moves"></p>
+
+          <div class="btn-c">
+            <button
+              class="reset-score-button"
+              onclick="
+      score.wins = 0; 
+      score.loses = 0; 
+      score.tie = 0; 
+      localStorage.removeItem('score'); updateScoreElement(); "
+            >
+              Reset Score
+            </button>
+            <button onclick="autoPlay();" class="auto-play-button">
+              Auto Play
+            </button>
           </div>
         </div>
-        <div class="card">
-          <div class="img-box">
-            <img src="./img/rock-paper-scissor.png" alt="rock-paper-scissor" />
-          </div>
-          <div class="context">
-            <h2>Rock Paper Scissor</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-              dolorem animi dicta voluptatibus, officia aspernatur facere
-              accusamus sapiente, corporis vel quas maiores similique in illum
-              eum neque omnis? Ea, sint?
-            </p>
-            <div class="btn-box"><button>Demo</button></div>
-          </div>
-        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
       </div>
     </main>
     <footer></footer>
+    <script src="./script.js"></script>
   </body>
 </html>

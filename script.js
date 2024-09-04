@@ -1,10 +1,37 @@
+let displayEl = document.querySelector('.counter-display');
+let increaseEl = document.querySelector('.increase');
+let decreaseEl = document.querySelector('.decrease');
+let resetEl = document.querySelector('.reset');
+
+let count = 0;
+update()
+increaseEl.addEventListener('click', () => {
+    count++
+    update()
+})
+decreaseEl.addEventListener('click', () => {
+    count--
+    update()
+})
+function update() {
+    displayEl.innerHTML = count;
+}
+decreaseEl.addEventListener('click', () => {
+    count--
+    update()
+})
+
+//rock paper scissors
+
+
+
 let score = JSON.parse(localStorage.getItem("score")) || {
     wins: 0,
     loses: 0,
     tie: 0,
-  };
+};
 
-  updateScoreElement();
+updateScoreElement();
 
   let isAutoPlaying = false;
 
