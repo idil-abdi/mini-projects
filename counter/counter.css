@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.counter-c{
+    border: 1px solid black;
+    margin:  16px auto;
+    width: 50%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.counter-display{
+    border: 1px solid black;
+    margin: 5px auto;
+    width: 160px;
+    font-size: 35px;
+}
+
+button{
+    padding: 0.5rem 1rem;
+}
+
+@media only screen and (max-width: 320px) {
+    .counter-c{
+        width: 80%;
+    }
+}
