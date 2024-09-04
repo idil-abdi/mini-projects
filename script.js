@@ -125,7 +125,7 @@ updateScoreElement();
 const jokesContainer = document.getElementById('jokes')
 const btn = document.querySelector('.jokes-btn');
 
-const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
+//const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
 const options = {
 	method: 'GET',
 	headers: {
