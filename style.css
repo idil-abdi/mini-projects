@@ -7,12 +7,16 @@
 }
 
 body{
-    margin: 1rem;
+    margin: 1rem 0;
     font-family: 'Hind Madurai';
 }
 
 header{
     text-align: center;
+}
+
+main{
+    margin: auto 12rem;
 }
 
 h1{
@@ -23,7 +27,6 @@ h1{
     display: grid;
     grid-template-columns: auto  ;
     grid-gap: 1rem;
-    margin: auto 12rem;
 }
 
 .box{
@@ -110,7 +113,7 @@ button{
 }
 
 @media only screen and (max-width: 600px) {
-    .project-c {
-        margin: 0;
+    main {
+        margin: 0 1rem;
     }
 }
