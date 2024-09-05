@@ -7,9 +7,27 @@
     <title>Mini Projects</title>
   </head>
   <body>
-    <header><h1>Mini Projects</h1></header>
+    <header>
+      <ul>
+        <li class="heading-left"><a class="active" href="#Home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </header>
     <main>
-      <div class="project-c">
+      <div id="about" class="jumbotron-c">
+        <h1>Hi, Welcome to My Project Showcase!</h1>
+        <p>
+          Explore a collection of mini projects ranging from fun games to
+          practical apps like a weather checker. Through these projects, I’m
+          demonstrating my growing skills in HTML, CSS, and especially
+          JavaScript. Each project reflects my dedication to becoming a great
+          developer, with a focus on creating interactive and functional
+          experiences. Thank you for visiting, and I hope you find inspiration
+          in my journey of development!
+        </p>
+      </div>
+      <div id="projects" class="project-c">
         <div class="box counter-c">
           <h1>Counter:</h1>
           <div class="counter-display"></div>
@@ -66,6 +84,7 @@
         </div>
 
         <div class="box weather-c">
+          <h1>Weather</h1>
           <div class="weather-search">
             <input
               type="text"
@@ -137,9 +156,21 @@
             <button class="individual-btn decimal">.</button>
           </div>
         </div>
+        <div class="box clock-c">
+          <div>
+            <h1>Digital Clock</h1>
+            <div class="clock">
+              <span id="hrs">00</span>
+              <span>:</span>
+              <span id="min">00</span>
+              <span>:</span>
+              <span id="sec">00</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>Footer</footer>
     <script src="./script.js"></script>
   </body>
 </html>

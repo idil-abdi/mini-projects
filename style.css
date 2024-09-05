@@ -7,16 +7,54 @@
 }
 
 body{
-    margin: 1rem 0;
     font-family: 'Hind Madurai';
+    background-repeat: no-repeat;
+    background-color:rgba(255, 0, 0, 0.70);
+    background-image:
+        radial-gradient(at 15% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+        radial-gradient(at 51% 0%, hsla(340,100%,76%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),
+        radial-gradient(at 89% 100%, hsla(240,100%,72%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);
 }
 
-header{
+header ul {
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+header ul li {
+    float: right;
+}
+
+header ul li a {
+    display: block;
+    color: white;
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.heading-left {
+    float: left;
 }
 
 main{
-    margin: auto 2rem;
+    margin: 1rem 2rem;
+}
+
+.jumbotron-c{
+    border: 1px solid black;
+    padding: 0.5rem;
+    max-width: 45%;
+    margin: auto;
 }
 
 h1{
@@ -28,10 +66,14 @@ h1{
     flex-wrap: wrap;
     grid-gap: 1rem;
     justify-content: center;
+    max-width: 70%;
+    margin: 2rem auto;
 }
 
 .box{
-    border: 1px solid black;
+    background-color: #00000089;
+    color: white;
+    border-radius: 20px;
 }
 
 /* Counters App  */
@@ -54,7 +96,6 @@ button{
 
 /* Rock Paper Scissors App  */
 .rock-paper-scissors-c{
-    color: black;
     padding: 1rem;
 }
 
@@ -118,7 +159,6 @@ button{
 
 /* Weather App */
 .weather-c{
-    background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -267,30 +307,30 @@ button{
 
 /* Calculator */
 .calculator-c{
-    padding: 0.5rem;
+    padding: 1.5rem;
 }
 
 .calculator-c input{
     width: 100%;
-    padding: 0.5px;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 30px;
-    border: 1px solid black;
 }
 
 .calculator-btn{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .calculator-btn button{
     padding: 10px;
-    font-style: 24px;
+    font-size: 24px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .operator{
@@ -312,13 +352,70 @@ button{
     grid-row: span 3;
 }
 
+/* digital clock */
+.clock-c{
+    padding: 1rem;
+}
+
+.clock{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 255, 0.11);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+    padding-bottom: 20px;
+}
+
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.clock span::after{
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50px;
+    transform: translateX(-50%);
+}
+
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINTUES';
+}
+#sec::after{
+    content: 'SECONDS';
+}
+
+
+footer{
+    background-color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    color: #fff;
+}
+
 @media only screen and (max-width: 768px) {
+    body{
+        height: auto;
+    }
     main {
         margin: 0 1rem;
     }
+    .jumbotron-c{
+        max-width: none;
+    }
     .project-c{
         display: block;
-        
+        max-width: none;
     
     }
     .box{
@@ -328,5 +425,8 @@ button{
     .input-c input{
         font-size: 13px;
         padding: 0;
+    }
+    .clock-c{
+        width: inherit;
     }
 }
