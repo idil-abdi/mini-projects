@@ -177,9 +177,70 @@ async function checkWeather(city) {
   } else if (data.weather[0].main == 'Mist'){
     weatherIcon.src = './img/mist.png'
   }
+
+  document.querySelector('.weather').style.display = 'block'
 }
 
 weatherSearchBtn.addEventListener('click', function() {
   checkWeather(weatherSearchBox.value); 
 })
-//29.40
+
+// password generator
+const passwordGeneratorBtn = document.querySelector('.generator-btn');
+const passwordInput = document.getElementById('input');
+const passwordCopyIcon = document.querySelector('.copy-icon');
+
+passwordGeneratorBtn.addEventListener('click', () => {
+  createPassword();
+})
+
+passwordCopyIcon.addEventListener('click', () => {
+  copyPassword();
+})
+
+function createPassword() {
+  const chars = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjiklmnopqrstuvwxyz';
+  const passwordLength = 10;
+  let password =''
+
+  for (let i = 0; i < passwordLength; i++) {
+    const randonNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randonNumber, randonNumber+1);    
+  }
+  passwordInput.value = password;
+}
+
+function copyPassword() {
+  passwordInput.select();
+  passwordInput.setSelectionRange(0,9999);
+  navigator.clipboard.writeText(passwordInput.value);
+}
+
+// age caluculator
+const birthdayInput = document.getElementById('birthday');
+const ageCalculatingBtn = document.getElementById('age-calculator-btn');
+const birthdayResult = document.getElementById('birthday-result');
+
+function ageCalculate() {
+  const birthdayValue = birthdayInput.value;
+  if (birthdayValue === '') {
+    alert('please enter a birthday date');
+  } else {
+    const age = getAge(birthdayValue);
+    birthdayResult.innerText = `Your age is ${age} years old`;
+  }  
+}
+
+function getAge(birthdayValue) {
+  const currentDate = new Date();
+  const birthdayDate = new Date(birthdayValue);
+  let age = currentDate.getFullYear() - birthdayDate.getFullYear();
+  const month = currentDate.getMonth() - birthdayDate.getMonth();
+
+  if (month < 0 || (month === 0 && currentDate.getDate() < birthdayDate.getDate())) {
+    age--
+  }
+  return age;
+}
+
+ageCalculatingBtn.addEventListener('click', ageCalculate)

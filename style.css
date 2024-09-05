@@ -34,6 +34,7 @@ h1{
     border: 1px solid black;
 }
 
+/* Counters App  */
 .counter-c{
     text-align: center;
     padding: 1rem;
@@ -50,7 +51,9 @@ h1{
 button{
     padding: 0.5rem 1rem;
 }
+/* End of Counter App  */
 
+/* Rock Paper Scissors App  */
 .rock-paper-scissors-c{
     color: black;
     padding: 1rem;
@@ -87,8 +90,10 @@ button{
     margin: 0.5rem 0;
     gap: 4rem;
 }
+/* End of Rock Paper Scissors App  */
 
-.jokes-generator{
+/*Random Jokes App  */
+.jokes-generator-c{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,13 +117,15 @@ button{
     background-color: lightgray;
 
 }
+/* End of Random Jokes App  */
 
-/* weather app */
+/* Weather App */
 .weather-c{
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     padding: 15px;
     text-align: center;
+    height: fit-content;
 }
 
 .weather-search{
@@ -192,11 +199,80 @@ button{
     margin-top: -10px;
 }
 
+.weather{
+    display: none;
+}
+/* End of weather App */
+
+/* Random Generating Password app */
+.password-generator-c{
+    padding: 10px 20px;
+    text-align: center;
+    height: fit-content;
+}
+
+.input-c{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 0.5rem 0;
+}
+
+.input-c input{
+    outline: 0;
+    color: #555;
+    padding: 2px 25px;
+    height: 50px;
+    flex: 1;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.input-c button{
+    outline: 0;
+    height: 50px;
+    cursor: pointer;
+}
+
+.generator-btn{
+    display: flex;
+    justify-self: end;
+}
+/* end of Random Generating Password */
+
+/* Age Calculator */
+.age-calculator-c{
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.birthday-form{
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.birthday-form input{
+    width: 40%;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid black;
+}
+.age-calculator-c p{
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* End of Age Calculator */
+
 @media only screen and (max-width: 768px) {
     main {
         margin: 0 1rem;
-        
-
     }
     .project-c{
         display: block;
@@ -206,5 +282,9 @@ button{
     .box{
         margin-bottom: 1rem;
         overflow: hidden;
+    }
+    .input-c input{
+        font-size: 13px;
+        padding: 0;
     }
 }
