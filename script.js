@@ -243,4 +243,31 @@ function getAge(birthdayValue) {
   return age;
 }
 
-ageCalculatingBtn.addEventListener('click', ageCalculate)
+ageCalculatingBtn.addEventListener('click', ageCalculate);
+
+// Calculator App
+const calculatorBtn = document.querySelectorAll('.individual-btn');
+const calculatorInputField = document.getElementById('calculator-result')
+
+for (let i = 0; i < calculatorBtn.length; i++) {
+  calculatorBtn[i].addEventListener('click', () => {
+    const buttonValue = calculatorBtn[i].textContent;
+    if(buttonValue === 'C') {
+      clearResult();
+    } else if (buttonValue === '=') {
+      calculatorResult();
+    } else {
+      appendValue(buttonValue);
+    }
+  })
+}
+
+function clearResult() {
+  calculatorInputField.value = '';
+}
+function calculatorResult() {
+  calculatorInputField.value = eval(calculatorInputField.value);
+}
+function appendValue(buttonValue) {
+  calculatorInputField.value += buttonValue;
+}
