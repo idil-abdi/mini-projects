@@ -100,9 +100,9 @@ updateScoreElement();
   }
 
   function updateScoreElement() {
-    document.querySelector(
-      ".js-score"
-    ).innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.tie}`;
+    let scorebtn = document.querySelector(".js-score");
+    scorebtn.style.display = 'none'
+    scorebtn.innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.tie}.`;
   }
 
   function pickComputerMove() {
