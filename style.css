@@ -282,6 +282,7 @@ button{
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .birthday-form{

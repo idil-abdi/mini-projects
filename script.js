@@ -1,24 +1,25 @@
-let displayEl = document.querySelector('.counter-display');
-let increaseEl = document.querySelector('.increase');
-let decreaseEl = document.querySelector('.decrease');
-let resetEl = document.querySelector('.reset');
-
-let count = 0;
-update()
-increaseEl.addEventListener('click', () => {
-    count++
-    update()
-})
-decreaseEl.addEventListener('click', () => {
-    count--
-    update()
-})
-function update() {
-    displayEl.innerHTML = count;
-}
-decreaseEl.addEventListener('click', () => {
-    count--
-    update()
+let counterNum = 0;
+const counterDisplay =  document.querySelector('.counter-display')
+const counterBtns = document.querySelectorAll('.counter-btn');
+counterBtns.forEach((counterbtn) => {
+  counterbtn.addEventListener('click', (e) => {
+    const styles = e.currentTarget.classList;
+    if (styles.contains('decrease')) {
+      counterNum--
+    } else if (styles.contains('increase')) {
+      counterNum++
+    } else {
+      counterNum = 0
+    }
+    counterDisplay.textContent = counterNum;
+    if (counterNum > 0) {
+      counterDisplay.style.color = "green";
+    } else if (counterNum < 0) {
+      counterDisplay.style.color = "red";
+    } else {
+      counterDisplay.style.color = "white";
+    }
+  })
 })
 
 

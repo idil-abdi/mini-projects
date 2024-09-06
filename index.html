@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Mini Projects</title>
   </head>
-  <body>
+  <body id="home">
     <header>
       <ul>
         <li class="heading-left">
-          <a class="active" href="#Home">Mini Projects</a>
+          <a class="active" href="#home">Mini Projects</a>
         </li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
@@ -21,7 +21,7 @@
         <h1>Hi, Welcome to My Project Showcase!</h1>
         <p>
           Explore a collection of mini projects ranging from fun games to
-          practical apps like a weather checker. Through these projects, I’m
+          practical apps like a weather checker. Through these projects, I'm
           demonstrating my growing skills in HTML, CSS, and especially
           JavaScript. Each project reflects my dedication to becoming a great
           developer, with a focus on creating interactive and functional
@@ -32,12 +32,11 @@
       <div id="projects" class="project-c">
         <div class="box counter-c">
           <h1>Counter:</h1>
-          <div class="counter-display"></div>
-          <button class="increase">+</button>
-          <button class="reset">Reset</button>
-          <button class="decrease">-</button>
+          <div class="counter-display">0</div>
+          <button class="counter-btn increase">+</button>
+          <button class="counter-btn reset">Reset</button>
+          <button class="counter-btn decrease">-</button>
         </div>
-
         <div class="box rock-paper-scissors-c">
           <h1>Rock Paper Scissors:</h1>
           <div class="move-icon-c">
@@ -66,10 +65,10 @@
             <button
               class="reset-score-button"
               onclick="
-      score.wins = 0; 
-      score.loses = 0; 
-      score.tie = 0; 
-      localStorage.removeItem('score'); updateScoreElement(); "
+                score.wins = 0; 
+                score.loses = 0; 
+                score.tie = 0; 
+                localStorage.removeItem('score'); updateScoreElement(); "
             >
               Reset Score
             </button>
@@ -78,7 +77,6 @@
             </button>
           </div>
         </div>
-
         <div class="box weather-c">
           <h1>Weather</h1>
           <div class="weather-search">
@@ -135,7 +133,6 @@
           <p id="jokes">How do trees get online? They just log in...</p>
           <button class="jokes-btn">Random Jokes</button>
         </div>
-
         <div class="box calculator-c">
           <input type="text" id="calculator-result" readonly />
           <div class="calculator-btn">
