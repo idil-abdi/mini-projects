@@ -57,6 +57,10 @@ main{
     margin: auto;
 }
 
+.jumbotron-c h1{
+    text-align: start;
+}
+
 h1{
     text-align: center;
 }
@@ -83,14 +87,33 @@ h1{
 }
 
 .counter-display{
-    border: 1px solid black;
+    border: 1px solid #fff;
     margin: 5px auto;
     width: 160px;
     font-size: 35px;
 }
 
+.increase{
+    background-color: #01ff70;
+    color: #ffff;
+}
+.reset{
+    background-color:#ffffff;
+}
+.decrease{
+    background-color: #ff4136;
+    color: #ffff;
+}
+
 button{
     padding: 0.5rem 1rem;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #ffa480;
 }
 /* End of Counter App  */
 
@@ -251,7 +274,6 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid black;
     margin: 0.5rem 0;
 }
 
@@ -261,14 +283,16 @@ button{
     padding: 2px 25px;
     height: 50px;
     flex: 1;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 24px;
+    border-radius: 5px 0 0 5px;
+    border: none;
 }
 
 .input-c button{
     outline: 0;
     height: 50px;
     cursor: pointer;
+    border-radius: 0 5px 5px 0;
 }
 
 .generator-btn{
@@ -422,10 +446,6 @@ footer{
     .box{
         margin-bottom: 1rem;
         overflow: hidden;
-    }
-    .input-c input{
-        font-size: 13px;
-        padding: 0;
     }
     .clock-c{
         width: inherit;
