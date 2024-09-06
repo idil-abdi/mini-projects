@@ -102,7 +102,6 @@ updateScoreElement();
 
   function updateScoreElement() {
     let scorebtn = document.querySelector(".js-score");
-    scorebtn.style.display = 'none'
     scorebtn.innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.tie}.`;
   }
 
