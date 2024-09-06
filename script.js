@@ -95,8 +95,8 @@ updateScoreElement();
     document.querySelector(".js-result").innerHTML = result;
 
     document.querySelector(".js-moves").innerHTML = `You
-  <img src="/img/${playerMove}-emoji.png" alt="rock" class="move-icon" />
-  <img src="/img/${computerMove}-emoji.png" alt="paper" class="move-icon" />
+  <img src="./img/${playerMove}-emoji.png" alt="rock" class="move-icon" />
+  <img src="./img/${computerMove}-emoji.png" alt="paper" class="move-icon" />
   Computer`;
   }
 
@@ -126,7 +126,7 @@ updateScoreElement();
 const jokesContainer = document.getElementById('jokes')
 const btn = document.querySelector('.jokes-btn');
 
-//const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
+const url = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
 const options = {
 	method: 'GET',
 	headers: {
