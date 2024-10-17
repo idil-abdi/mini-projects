@@ -284,7 +284,130 @@ setInterval(() => {
   sec.innerHTML = (currentTime.getSeconds()< 10 ? '0' : '') + currentTime.getSeconds();
 }, 1000)
 
+// quiz app
+const startBtn = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
+const resetButton = document.getElementById('reset-btn')
+const questionC = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerBtnElement = document.getElementById('answer-buttons')
+const resultElement = document.getElementById('result')
+
+let shuffleQuestion, currentQuestionIndex
+let quizScore = 0
+
+startBtn.addEventListener('click', () => startGame())
+resetButton.addEventListener('click', () => location.reload())
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
+
+const questionList = [
+    {
+        question: 'What is 2 + 2?',
+        answers: [
+            {text: '4', correct: true},
+            {text: '22', correct: false}
+        ],
+    },
+    {
+        question: 'What is 7 + 2?',
+        answers: [
+            {text: '3', correct: false},
+            {text: '9', correct: true}
+        ],
+    },
+    {
+        question: 'What is 2 x 5?',
+        answers: [
+            {text: '7', correct: false},
+            {text: '10', correct: true }
+        ],
+    },
+    {
+        question: 'What is 10 - 9?',
+        answers: [
+            {text: '1', correct: true},
+            {text: '10', correct: false},
+            {text: '6', correct: false},
+            {text: '24', correct: false}
+        ],
+    },
+]
+
+const startGame = () => {
+    console.log('start');
+    startBtn.classList.add('hide')
+    shuffleQuestion = questionList.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionC.classList.remove('hide')
+    setNextQuestion()
+}
+
+const setNextQuestion = () => {
+    resetState()
+    showQuestion(shuffleQuestion[currentQuestionIndex])
+}
+
+const showQuestion = (question) => {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const btn = document.createElement('button')
+        btn.innerText = answer.text
+        btn.classList.add('btn')
+        if (answer.correct) {
+            btn.dataset.correct = answer.correct
+        }
+        btn.addEventListener('click', selectAnswer)
+        answerBtnElement.appendChild(btn)
+    });
+}
+
+const resetState = () => {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerBtnElement.firstChild) {
+        answerBtnElement.removeChild(answerBtnElement.firstChild)
+    }
+}
+
+const selectAnswer = (e) => {
+    const selectedBtn = e.target
+    const correct = selectedBtn.dataset.correct
+    if (correct) {
+        quizScore++
+    }
+    setStatusClass(document.body, correct)
+    Array.from(answerBtnElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffleQuestion.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        resetButton.classList.remove('hide')
+        questionElement.classList.add('hide')
+        answerBtnElement.classList.add('hide')
+        resultElement.innerHTML = `You scored ${quizScore} out of ${questionList.length}!`
+        resultElement.classList.remove('hide')
+        clearStatusClass(document.body)
+    }
+    
+}
 
 
+const setStatusClass = (element, correct) => {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')        
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+const clearStatusClass = (element) => {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
 
 
